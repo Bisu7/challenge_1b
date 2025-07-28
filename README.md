@@ -42,7 +42,7 @@ Build a core system that powers intelligent document understanding and semantic 
 
 ### 🔹 Step 1: Clone the Repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Bisu7/challenge_1b
 cd adobe_docker
 ```
 
