@@ -1,4 +1,3 @@
-# utils/relevance_ranker.py
 from sentence_transformers import SentenceTransformer, util
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -16,7 +15,7 @@ def smart_chunk(text, min_len=100, max_len=600):
     """
     Chunk large text into coherent blocks based on empty lines and length.
     """
-    raw = text.split('\n\n')  # split on double line breaks
+    raw = text.split('\n\n')  
     chunks = []
 
     buffer = ""
