@@ -132,23 +132,20 @@ This will:
 
 ### 🔹 Step 1: Build the Docker Image
 ```bash
-docker build --platform linux/amd64 -t persona-insight:round1b .
+docker build --network host -t pdf-ranker-app .  
 ```
 
 ### 🔹 Step 2: Run the Docker Container
 
 #### On Windows (PowerShell)
 ```bash
-docker run --rm ^
-  -v ${PWD}\input:/app/input ^
-  -v ${PWD}\output:/app/output ^
-  --network none ^
-  persona-insight:round1b
+docker run --rm -v "${PWD}\input:/app/input" -v "${PWD}\output:/app/output" pdf-ranker-app
 ```
 
 #### On Linux/macOS (or Git Bash)
 ```bash
-docker run --rm   -v $(pwd)/input:/app/input   -v $(pwd)/output:/app/output   --network none   persona-insight:round1b
+docker run --rm -v "$(pwd)/input:/app/input" -v "$(pwd)/output:/app/output" pdf-ranker-app
+
 ```
 
 ✅ Tip: Temporarily remove `--network none` to allow HuggingFace model downloads when first running the container.
